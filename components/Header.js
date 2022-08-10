@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { HomeIcon } from "@heroicons/react/outline";
 
 export const Header = () => {
   return (
@@ -9,8 +10,11 @@ export const Header = () => {
         height={80}
         className="cursor-pointer"
       />
+
       <div>
-        <a></a>
+        <a className="text-white">
+          <HomeIcon className="h-4 " />
+        </a>
       </div>
     </div>
   );
