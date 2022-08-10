@@ -1,5 +1,10 @@
 import Image from "next/image";
-import { HomeIcon } from "@heroicons/react/outline";
+import {
+  HomeIcon,
+  SearchIcon,
+  PlusIcon,
+  StarIcon,
+} from "@heroicons/react/outline";
 
 export const Header = () => {
   return (
@@ -11,11 +16,37 @@ export const Header = () => {
         className="cursor-pointer"
       />
 
-      <div>
-        <a className="text-white">
-          <HomeIcon className="h-4 " />
+      <div className="hidden ml-10 md:flex items-center space-x-6">
+        <a className="header-link group">
+          <HomeIcon className="h-4" />
+          <span className="span">Home</span>
+        </a>
+        <a className="header-link group">
+          <SearchIcon className="h-4" />
+          <span className="span">Search</span>
+        </a>
+        <a className="header-link group">
+          <PlusIcon className="h-4" />
+          <span className="span">Watchlist</span>
+        </a>
+        <a className="header-link group">
+          <StarIcon className="h-4" />
+          <span className="span">Originals</span>
+        </a>
+        <a className="header-link group">
+          <img src="/images/movie-icon.svg" alt="" className="h-5" />
+          <span className="span">Movies</span>
+        </a>
+        <a className="header-link group">
+          <img src="/images/series-icon.svg" alt="" className="h-5" />
+          <span className="span">Series</span>
         </a>
       </div>
+      <button className="ml-auto uppercase border px-4 py-1.5 rounded font-medium tracking-wide hover:text-[#8080ef] hover:bg-black transition duration-200">
+        Login
+      </button>
     </div>
   );
 };
+
+export default Header;
