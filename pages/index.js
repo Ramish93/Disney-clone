@@ -17,7 +17,7 @@ const Home = () => {
       {!session ? (
         <Hero />
       ) : (
-        <main>
+        <main className="relative min-h-screen after:bg-home after:bg-center after:bg-cover after:bg-no-repeat after:bg-fix after:absolute after:inset-0 after:z-[-1]">
           <Slider />
           <Brands />
         </main>
