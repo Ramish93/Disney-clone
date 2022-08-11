@@ -2,6 +2,7 @@ import { useSession, getSession } from "next-auth/client";
 import Head from "next/head";
 import { Header } from "../components/Header";
 import { Hero } from "../components/Hero";
+import { Brands } from "../components/Brands";
 import Slider from "../components/Slider";
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
       ) : (
         <main>
           <Slider />
+          <Brands />
         </main>
       )}
     </div>
