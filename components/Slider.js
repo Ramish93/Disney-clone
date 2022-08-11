@@ -1,15 +1,16 @@
 import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 const Slider = () => {
   return (
-    <section>
+    <section className="relative mt-7 shadow-2xl max-w-screen-2xl mx-auto">
       <Carousel
         autoPlay
         infiniteLoop
         showStatus={false}
         showIndicators={false}
         showThumbs={false}
-        interval={5000}
+        interval={2500}
       >
         <div>
           <img loading="lazy" src="/images/slider-1.jpg" alt="" />

@@ -1,7 +1,7 @@
 import { useSession, getSession } from "next-auth/client";
 import Head from "next/head";
 import { Header } from "../components/Header";
-import Image from "next/image";
+import { Hero } from "../components/Hero";
 import Slider from "../components/Slider";
 
 const Home = () => {
