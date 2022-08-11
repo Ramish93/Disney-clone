@@ -4,16 +4,23 @@ import {
   SearchIcon,
   PlusIcon,
   StarIcon,
-} from "@heroicons/react/outline";
+} from "@heroicons/react/solid";
+import { signIn, signOut, useSession } from "next-auth/client";
+import { useRouter } from "next/router";
 
-export const Header = () => {
+const Header = () => {
+  const [session] = useSession();
+  const router = useRouter();
+
   return (
-    <div className="sticky bg-[#040714] top-0 z-[1000] flex h-[72px] items-center px-10 md:px-12 ">
+    <header className="sticky bg-[#040714] top-0 z-[1000] flex items-center px-10 md:px-12 h-[72px]">
       <Image
         src="/images/logo.svg"
+        alt=""
         width={80}
         height={80}
         className="cursor-pointer"
+        onClick={() => router.push("/")}
       />
 
       <div className="hidden ml-10 md:flex items-center space-x-6">
@@ -42,11 +49,14 @@ export const Header = () => {
           <span className="span">Series</span>
         </a>
       </div>
-      <button className="ml-auto uppercase border px-4 py-1.5 rounded font-medium tracking-wide hover:text-[#8080ef] hover:bg-black transition duration-200">
+      <button
+        className="ml-auto uppercase border px-4 py-1.5 rounded font-medium tracking-wide hover:bg-[#8080ef] hover:text-black transition duration-200"
+        onClick={signIn}
+      >
         Login
       </button>
-    </div>
+    </header>
   );
 };
 
-export default Header;
+export { Header };
