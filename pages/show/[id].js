@@ -1,12 +1,12 @@
 import { getSession, useSession } from "next-auth/client";
+import { useState, useEffect } from "react";
+import { PlusIcon, XIcon } from "@heroicons/react/solid";
 import Head from "next/head";
 import Image from "next/image";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import Header from "../../components/Header";
-import Hero from "../../components/Hero";
-import { PlusIcon, XIcon } from "@heroicons/react/solid";
+import { Header } from "../../components/Header";
+import { Hero } from "../../components/Hero";
 import ReactPlayer from "react-player/lazy";
+import { useRouter } from "next/router";
 
 function Show({ result }) {
   const [session] = useSession();

@@ -24,4 +24,4 @@ function ShowThumbnail({ result }) {
   );
 }
 
-export { ShowThumbnail };
+export default ShowThumbnail;

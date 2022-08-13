@@ -1,4 +1,4 @@
-import { ShowThumbnail } from "./ShowThumbnail";
+import ShowThumbnail from "./ShowThumbnail";
 function ShowsCollection({ results, title }) {
   return (
     <div className="flex flex-col space-y-2 my-8 px-8 max-w-[1400px] mx-auto">
