@@ -1,11 +1,12 @@
 import { getSession, useSession } from "next-auth/client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { PlusIcon, XIcon } from "@heroicons/react/solid";
 import Head from "next/head";
 import Image from "next/image";
 import { Header } from "../../components/Header";
 import { Hero } from "../../components/Hero";
 import ReactPlayer from "react-player/lazy";
+import { useRouter } from "next/router";
 
 const Movie = ({ result }) => {
   const [session] = useSession();
@@ -16,6 +17,13 @@ const Movie = ({ result }) => {
   const index = result.videos.results.findIndex(
     (element) => element.type === "Trailer"
   );
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!session) {
+      router.push("/");
+    }
+  }, []);
 
   return (
     <div>
